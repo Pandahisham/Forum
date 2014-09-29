@@ -1,0 +1,36 @@
+{
+    "name": "qrokodial/forum",
+    "description": "Adds forum support to Laravel",
+    "keywords": ["forum", "laravel"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "qrokodial",
+            "email": "qrok@projectbnet.net"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "~5.0",
+        "illuminate/database": "~5.0"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Qrokodial\\Forum\\": "src/"
+        }
+    },
+    "extra": {
+        "component": "package",
+        "frameworks": ["Laravel 5"],
+        "versions": {
+            "1": "master"
+        },
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "minimum-stability": "dev"
+}
