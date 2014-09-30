@@ -90,7 +90,7 @@ By default, the parser is set to `\Qrokodial\Forum\DoNothingParser`, which, as y
 
 * Composer
 * Laravel 5
-* PHP >= 5.4
+* PHP >= 5.5
 
 ## Installation
 
