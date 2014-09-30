@@ -102,5 +102,6 @@ By default, the parser is set to `\Qrokodial\Forum\DoNothingParser`, which, as y
 ```
 * Run Composer command `composer update` from the terminal in your root project directory
 * Add `"\Qrokodial\Forum\Laravel\ForumServiceProvider",` to the service provider array in your `config/app.php` file
+* Add `"Forum" => "\Qrokodial\Forum\Laravel\Forum",` to the alias array in your `config/app.php` file
 * Pull the configuration file by running `php artisan publish:config qrokodial/forum` from your terminal
 * Review your configuration file at `config/packages/qrokodial/forum/config.php` and make changes if necessary
