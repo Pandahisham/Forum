@@ -1,7 +1,7 @@
 {
     "name": "qrokodial/forum",
     "description": "Adds forum support to Laravel",
-    "keywords": ["forum", "laravel"],
+    "keywords": ["forum", "forums", "discuss", "discussions", "laravel", "laravel 5"],
     "license": "MIT",
     "authors": [
         {
