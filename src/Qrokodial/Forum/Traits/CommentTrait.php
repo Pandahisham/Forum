@@ -1,6 +1,6 @@
 <?php namespace Qrokodial\Forum\Traits;
 
-use Config;
+use Forum;
 
 trait CommentTrait {
 	/**
@@ -36,6 +36,6 @@ trait CommentTrait {
 	 * @return \Illuminate\Database\Eloquent\Relations\Relation
 	 */
 	public function user() {
-		return $this->belongsTo(Config::get("forum::users.model"), "user_id");
+		return $this->belongsTo(Forum::getUserClass(), "user_id");
 	}
 }

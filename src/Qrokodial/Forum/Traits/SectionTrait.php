@@ -1,6 +1,6 @@
 <?php namespace Qrokodial\Forum\Traits;
 
-use Config;
+use Forum;
 
 trait SectionTrait {
 	/**
@@ -54,7 +54,7 @@ trait SectionTrait {
 	 * @return \Illuminate\Database\Eloquent\Relations\Relation
 	 */
 	public function parent() {
-		return $this->hasOne(Config::get("forum::sections.model"), "parent_id");
+		return $this->hasOne(Forum::getSectionClass(), "parent_id");
 	}
 
 	/**
@@ -72,7 +72,7 @@ trait SectionTrait {
 	 * @return \Illuminate\Database\Eloquent\Relations\Relation
 	 */
 	public function children() {
-		return $this->hasMany(Config::get("forum::sections.model"), "parent_id")->orderBy("weight", "desc");
+		return $this->hasMany(Forum::getSectionClass(), "parent_id")->orderBy("weight", "desc");
 	}
 
 	/**
@@ -107,7 +107,7 @@ trait SectionTrait {
 	 * @return \Illuminate\Database\Eloquent\Relations\Relation
 	 */
 	public function topics() {
-		return $this->hasMany(Config::get("forum::topics.model"), "section_id")->orderBy("id", "desc");
+		return $this->hasMany(Forum::getTopicClass(), "section_id")->orderBy("id", "desc");
 	}
 
 	/**
@@ -117,7 +117,7 @@ trait SectionTrait {
 	 * @return \Illuminate\Database\Eloquent\Relations\Relation
 	 */
 	public function topicsPinnedFirst() {
-		return $this->hasMany(Config::get("forum::topics.model"), "section_id")->orderBy("is_pinned", "desc")->orderBy("id", "desc");
+		return $this->hasMany(Forum::getTopicClass(), "section_id")->orderBy("is_pinned", "desc")->orderBy("id", "desc");
 	}
 
 	/**

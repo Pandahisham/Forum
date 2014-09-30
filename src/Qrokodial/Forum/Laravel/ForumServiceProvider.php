@@ -20,7 +20,7 @@ class ForumServiceProvider extends ServiceProvider {
 	 */
 	public function register() {
 		$this->app->bind(ForumContract::class, function($app) {
-			return new Forum;
+			return new Forum($app["config"]);
 		});
 	}
 

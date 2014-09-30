@@ -1,6 +1,6 @@
 <?php namespace Qrokodial\Forum\Traits;
 
-use Config;
+use Forum;
 
 trait TopicTrait {
 	/**
@@ -54,7 +54,7 @@ trait TopicTrait {
 	 * @return mixed
 	 */
 	public function section() {
-		return $this->belongsTo(Config::get("forum::sections.model"), "section_id");
+		return $this->belongsTo(Forum::getSectionClass(), "section_id");
 	}
 
 	/**
@@ -63,7 +63,7 @@ trait TopicTrait {
 	 * @return \Illuminate\Database\Eloquent\Relations\Relation
 	 */
 	public function comments() {
-		return $this->hasMany(Config::get("forum::comments.model"), "topic_id")->orderBy("id", "desc");
+		return $this->hasMany(Forum::getCommentClass(), "topic_id")->orderBy("id", "desc");
 	}
 
 	/**

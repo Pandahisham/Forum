@@ -1,5 +1,6 @@
 <?php namespace Qrokodial\Forum;
 
+use Forum;
 use Qrokodial\Forum\Contract\CommentContract;
 use Qrokodial\Forum\Traits\CommentTrait;
 
@@ -14,7 +15,7 @@ class SimpleComment implements CommentContract {
 	 * @param $content
 	 */
 	public function setContentAttribute($content) {
-		$parserClass = Config::get("forum::comments.parser");
+		$parserClass = Forum::getParserClass();
 		$this->attributes["content"] = $content;
 		$this->display_content = with(new $parserClass)->parse($content);
 	}
